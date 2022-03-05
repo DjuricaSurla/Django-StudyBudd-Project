@@ -155,4 +155,4 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # Heroku settings.
 import django_heroku
-django_heroku.settings(locals()
+django_heroku.settings(locals())
