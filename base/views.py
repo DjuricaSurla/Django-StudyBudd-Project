@@ -23,7 +23,7 @@ def loginPage(request):
         try:
             user = User.objects.get(username=email)
         except:
-            messages.error(request, 'User does not exist')
+             messages.error(request, 'User does not exist')
 
         user = authenticate(request, email=email, password=password)
 
@@ -49,6 +49,7 @@ def registerPage(request):
             return redirect('home')
         else:
             messages.error(request, 'Ann error occurred during registration.')
+            messages.error(request, 'Password must be minimum 8 characters long.' )
 
     return render(request, 'base/login_register.html', {'form': form})
 
